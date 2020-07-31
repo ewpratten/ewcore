@@ -1,5 +1,17 @@
 load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
 
+# filegroup(
+#     name="hdrs",
+#     srcs=glob(["*.hh"]),
+#     visibility = ["//visibility:public"],
+# )
+
+cc_library(
+    name="math",
+    deps=[":mathutils"],
+    visibility = ["//visibility:public"],
+)
+
 cc_library(
     name = "mathutils",
     srcs = ["mathutils.cc"],

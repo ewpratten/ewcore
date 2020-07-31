@@ -1,4 +1,4 @@
-#include "core/math/mathutils.hh"
+#include "ewcore/math/mathutils.hh"
 #include "./math_bindings.hh"
 
 void ewcore::math::initMathUtils(py::module m){
