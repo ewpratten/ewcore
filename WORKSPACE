@@ -47,8 +47,15 @@ http_archive(
     urls = ["https://github.com/google/googletest/archive/release-{version}.tar.gz".format(version = GOOGLETEST_VERSION)],
 )
 
-# git_repository(
-#     name = "gtest",
-#     remote = "https://github.com/google/googletest",
-#     tag = "release-1.8.0",
-# )
+## Python ##
+
+http_archive(
+    name = "rules_python",
+    url = "https://github.com/bazelbuild/rules_python/releases/download/0.0.2/rules_python-0.0.2.tar.gz",
+    strip_prefix = "rules_python-0.0.2",
+    sha256 = "b5668cde8bb6e3515057ef465a35ad712214962f0b3a314e551204266c7be90c",
+)
+
+load("@rules_python//python:pip.bzl", "pip_repositories")
+pip_repositories()
+
