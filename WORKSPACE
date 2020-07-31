@@ -58,4 +58,3 @@ http_archive(
 
 load("@rules_python//python:pip.bzl", "pip_repositories")
 pip_repositories()
-
