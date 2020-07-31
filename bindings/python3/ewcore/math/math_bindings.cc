@@ -11,4 +11,9 @@ void ewcore::math::initMathUtils(py::module m){
     // clamp()
     mathUtilsMod.def("clamp", &ewcore::math::clamp,
           "Clamp a value between two other values");
+
+    // epsilonEquals()
+    mathUtilsMod.def("epsilonEquals", &ewcore::math::epsilonEquals,
+          "Check if two values are equal to eachother within a range", py::arg("a"), py::arg("b"), py::arg("epsilon") = kVerySmallNumber);
+
 }

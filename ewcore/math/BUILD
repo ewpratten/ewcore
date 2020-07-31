@@ -7,9 +7,9 @@ load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
 # )
 
 cc_library(
-    name="math",
-    deps=[":mathutils"],
+    name = "math",
     visibility = ["//visibility:public"],
+    deps = [":mathutils"],
 )
 
 cc_library(
@@ -20,12 +20,18 @@ cc_library(
     visibility = ["//visibility:public"],
 )
 
+test_suite(
+    name = "test",
+    visibility = ["//visibility:public"],
+    tests = [":mathutils_test"],
+)
+
 cc_test(
-    name="mathutils_test",
-    srcs=["mathutils_test.cc"],
+    name = "mathutils_test",
+    srcs = ["mathutils_test.cc"],
     copts = ["-Iexternal/gtest/include"],
     deps = [
-        "@gtest//:gtest_main",
         ":mathutils",
+        "@gtest//:gtest_main",
     ],
 )

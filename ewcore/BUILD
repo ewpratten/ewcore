@@ -1,4 +1,4 @@
-load("@rules_cc//cc:defs.bzl", "cc_binary")
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_test")
 # load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 # pkg_tar(
@@ -31,6 +31,11 @@ cc_binary(
     name = "ewcore.so",
     linkshared = True,
     deps = ["//ewcore/math"],
+)
+
+test_suite(
+    name = "test",
+    tests = ["//ewcore/math:test"],
 )
 
 # cc_import(

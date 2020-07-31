@@ -7,7 +7,11 @@
 namespace ewcore {
 namespace math {
 
+// Clamp a value between two other values
 double clamp(double val, double low, double high);
+
+// Check if two values are equal to eachother within a range
+bool epsilonEquals(double a, double b, double epsilon = kVerySmallNumber);
 
 }  // namespace math
 }  // namespace ewcore
