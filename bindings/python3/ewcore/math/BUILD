@@ -7,6 +7,6 @@ pybind_library(
     hdrs = ["math_bindings.hh"],
     visibility = ["//visibility:public"],
     deps = [
-        "//core/math:mathutils",
+        "//ewcore/math:mathutils",
     ],
 )

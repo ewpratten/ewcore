@@ -7,12 +7,12 @@ pybind_extension(
     srcs = ["ewcore_bindings.cc"],
     visibility = ["//visibility:public"],
     deps = [
-        "//bindings/python3/core/math",
+        "//bindings/python3/ewcore/math",
     ],
 )
 
 py_test(
-    name = "ewcore_test",
+    name = "test",
     srcs = ["import_test.py"],
     main = "import_test.py",
     deps = [
