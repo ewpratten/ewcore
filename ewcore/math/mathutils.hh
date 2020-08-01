@@ -13,6 +13,10 @@ double clamp(double val, double low, double high);
 // Check if two values are equal to eachother within a range
 bool epsilonEquals(double a, double b, double epsilon = kVerySmallNumber);
 
+// Remap a value from one range to another
+double map(double value, double input_low, double input_high, double output_low,
+           double output_high);
+
 }  // namespace math
 }  // namespace ewcore
 

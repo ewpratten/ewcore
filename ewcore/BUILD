@@ -31,11 +31,13 @@ cc_binary(
     name = "ewcore.so",
     linkshared = True,
     deps = ["//ewcore/math"],
+    visibility = ["//visibility:public"],
 )
 
 test_suite(
     name = "test",
     tests = ["//ewcore/math:test"],
+    visibility = ["//visibility:public"],
 )
 
 # cc_import(
