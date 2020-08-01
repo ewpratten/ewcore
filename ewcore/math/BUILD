@@ -9,7 +9,10 @@ load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
 cc_library(
     name = "math",
     visibility = ["//visibility:public"],
-    deps = [":mathutils"],
+    deps = [
+        ":mathutils",
+        ":measurement",
+    ],
 )
 
 cc_library(
@@ -20,10 +23,21 @@ cc_library(
     visibility = ["//visibility:public"],
 )
 
+cc_library(
+    name = "measurement",
+    srcs = ["measurement.cc"],
+    hdrs = ["measurement.hh"],
+    includes = ["./"],
+    visibility = ["//visibility:public"],
+)
+
 test_suite(
     name = "test",
+    tests = [
+        ":mathutils_test",
+        ":measurement_test",
+    ],
     visibility = ["//visibility:public"],
-    tests = [":mathutils_test"],
 )
 
 cc_test(
@@ -32,6 +46,17 @@ cc_test(
     copts = ["-Iexternal/gtest/include"],
     deps = [
         ":mathutils",
+        "@gtest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "measurement_test",
+    srcs = ["measurement_test.cc"],
+    copts = ["-Iexternal/gtest/include"],
+    deps = [
+        ":mathutils",
+        ":measurement",
         "@gtest//:gtest_main",
     ],
 )
