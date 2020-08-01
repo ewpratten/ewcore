@@ -27,6 +27,11 @@ jobs:
     - name: Test
       run: |
         "${GITHUB_WORKSPACE}/bin/bazel" test //:test --test_verbose_timeout_warnings
+
+    - name: Dump Logs
+      if: always()
+      run: cat bazel-testlogs/**/test.log
+
   build:
     runs-on: ubuntu-latest
     
