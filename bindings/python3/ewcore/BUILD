@@ -6,6 +6,6 @@ pybind_extension(
     srcs = ["ewcore_bindings.cc"],
     visibility = ["//visibility:public"],
     deps = [
-        "//bindings/python3/ewcore/math",
+        "//bindings/python3/ewcore/math:all_bindings",
     ],
 )

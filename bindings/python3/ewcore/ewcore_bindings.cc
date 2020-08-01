@@ -1,5 +1,6 @@
 #include "ewcore/math/mathutils.hh"
-#include "bindings/python3/ewcore/math/math_bindings.hh"
+#include "bindings/python3/ewcore/math/mathutils_bindings.hh"
+#include "bindings/python3/ewcore/math/measurement_bindings.hh"
 
 PYBIND11_MODULE(ewcore, m) {
     m.doc() = "Python3 bindings to ewcore";
@@ -7,5 +8,6 @@ PYBIND11_MODULE(ewcore, m) {
 
     // Handle math bindings
     py::module mathMod = m.def_submodule("math");
-    ewcore::math::initMathUtils(mathMod);
+    initMathUtils(mathMod);
+    initMeasurements(mathMod);
 }
