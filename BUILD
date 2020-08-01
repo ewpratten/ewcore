@@ -9,7 +9,7 @@ filegroup(
 test_suite(
     name = "test",
     tests = [
+        "//bindings:test",
         "//ewcore:test",
-        "//bindings:test"
     ],
 )
