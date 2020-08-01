@@ -26,7 +26,7 @@ jobs:
 
     - name: Test
       run: |
-        "${GITHUB_WORKSPACE}/bin/bazel" test //:test
+        "${GITHUB_WORKSPACE}/bin/bazel" test //:test --test_verbose_timeout_warnings
   build:
     runs-on: ubuntu-latest
     
