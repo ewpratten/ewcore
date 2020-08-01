@@ -1,4 +1,4 @@
-# ewcore
+# ewcore ![Project](https://github.com/Ewpratten/ewcore/workflows/Project/badge.svg)
 My core library for programming QOL
 
 ## Building
